@@ -17,7 +17,7 @@ public class HolaMundo extends HttpServlet {
 	//Importamos el método service, el cual tiene la request y response como parametros
 	
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws IOException{
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException{
 		
 		//Lo que se va enviar
 		PrintWriter out = resp.getWriter();
