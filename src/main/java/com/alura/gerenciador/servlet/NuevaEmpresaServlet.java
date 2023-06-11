@@ -16,6 +16,13 @@ public class NuevaEmpresaServlet extends HttpServlet {
 		System.out.println("Nueva Empresa Registrada");
 		
 	 	String nombreEmpresa = request.getParameter("nombre");
+	 	
+	 	Empresa empresa = new Empresa();
+	 	
+	 	empresa.setNombre(nombreEmpresa);
+	 	
+	 	DB baseDeDatos = new DB();
+	 	baseDeDatos.agregarEmpresa(empresa);
 		
 		PrintWriter out = response.getWriter();
 		
