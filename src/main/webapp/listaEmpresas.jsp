@@ -1,6 +1,7 @@
-<%@page import="java.util.List, com.alura.gerenciador.servlet.Empresa"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.List, com.alura.gerenciador.servlet.Empresa"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><% //Importa las librerias que descargamos, una librería que pone tags en html %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,19 +9,14 @@
 <title>Insert title here</title>
 </head>
 	<body>
-	
-	Lista de Empresas <br />
+		Lista de Empresas <br />
 		
-	<ul>
-		<%
-		List<Empresa> lista = (List<Empresa>)request.getAttribute("empresas"); //Se castea de tal forma que quede de ese tipo de varible
-		
-		for (Empresa empresa : lista){
-		%>
-			<li><%=empresa.getNombre()%> </li>
-		<%
-			}
-		%>
-	</ul>
-</body>
+		<ul>
+			
+			<c:forEach items="${empresas}" var="empresa">
+				<li>${empresa.nombre}</li> <%//Expression Languaje erntiende que debe hacer un get sin escribirlo textualmente %>
+			</c:forEach>
+			
+		</ul>
+	</body>
 </html>
