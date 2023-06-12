@@ -1,8 +1,9 @@
 
 <%
 	//Permite codigo java
+	//scriplet
 
-	String empresa = "Alura";
+	String empresa = (String)request.getAttribute("empresa");
 	System.out.println(empresa);
 %>
 
